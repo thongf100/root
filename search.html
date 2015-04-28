@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		var timer = null;
+		$("#search").keydown(function(){
+	       clearTimeout(timer); 
+	       timer = setTimeout(doSearch, 1000)
+		});
+
+		function doSearch() {
+	    	//alert("do search");
+	    	$( "#searchTarget" ).submit();
+		}
+	});
+</script>
+</head>
+
+<body>
+
+<form id="searchTarget" action="https://www.flickr.com/search/">
+  Search Flickr: <input type="search" id="search" name="text">
+</form>
+
+</body>
+</html>
